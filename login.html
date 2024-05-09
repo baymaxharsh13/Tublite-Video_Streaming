@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main class="container">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <h2>Login</h2>
+        <form id="emailForm" onsubmit="return validateEmail()">
+            <div class="input-field">
+                <input type="email" name="email" id="email"
+                    placeholder="Enter Your Email (Gmail Only)">
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" id="password"
+                    placeholder="Enter Your Password">
+                <div class="underline"></div>
+            </div>
+
+            <input type="submit" value="Continue" onclick="redirectToPage()" >
+
+        </form>
+
+        <div class="footer">
+            <span>Or Connect With Social Media</span>
+            <div class="social-fields">
+                <div class="social-field twitter">
+                    <a href="#">
+                        <i class="fab fa-google"></i>
+                        Sign in with Google
+                    </a>
+                </div>
+                <div class="social-field facebook">
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                        Sign in with Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function validateEmail() {
+            var emailInput = document.getElementById('email');
+            var email = emailInput.value.trim();
+
+            if (!email.endsWith('@gmail.com')) {
+                alert('Please enter a Gmail email address');
+                return false;
+            }
+            return true;
+        }
+        function redirectToPage() {
+   
+    window.location.href = 'index.html'; 
+}
+
+    </script>
+</body>
+</html>
